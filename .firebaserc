@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "kagoal",
+    "staging": "kagoal"
+  }
+}
