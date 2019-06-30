@@ -1,3 +1,4 @@
+language: generic # no-frills build
 deploy:
   provider: firebase
   token:
