@@ -9,24 +9,24 @@
       
 		
 		if (email.length === 0) {
-			   alert('Please enter an email address.');
+			   ShowsweetAlert('Please enter an email address.');
           return;
 
         }
 
          if (validateEmail(email) === false) {
-   alert('Please enter correct  email address.');
+   ShowsweetAlert('Please enter correct  email address.');
           return;
         }
         
          if (password.length === 0) {
-						   alert('Please enter an Password.');
+						   ShowsweetAlert('Please enter an Password.');
           return;
 
         }
 		  if ( CheckPassword(password) === false) 
 		  {
-			  				   alert('Password  musts be 8 -16 and have Lower case , upperCase and characters');
+			  				   ShowsweetAlert('Password  musts be 8 -16 and have Lower case , upperCase and characters');
           return;
 
         }
@@ -44,9 +44,9 @@
           var errorMessage = error.message;
           // [START_EXCLUDE]
           if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
+            ShowsweetAlert('Wrong password.');
           } else {
-            alert(errorMessage);
+            ShowsweetAlert(errorMessage);
           }
           console.log(error);
           document.getElementById('quickstart-sign-in').disabled = false;
@@ -68,38 +68,38 @@ var password=document.getElementById("passwordsignup").value;
 
   
 	   if (FName.length === 0) {
-            alert(" Please enter an First Name ");
+            ShowsweetAlert(" Please enter an First Name ");
 						return;
 
       }
      
    if (LName.length === 0) {
-            alert("Please enter an Last Name ");
+            ShowsweetAlert("Please enter an Last Name ");
 						return;
 
 
         }
          if (email.length === 0) {
-            alert("Please enter an email address.");
+            ShowsweetAlert("Please enter an email address.");
 						return;
 
 
         }
 
          if (validateEmail(email) === false) {
-            alert("Email not correct ");
+            ShowsweetAlert("Email not correct ");
 						return;
 
 
         }
         
          if (password.length === 0) {
-            alert("Please enter a password.");
+            ShowsweetAlert("Please enter a password.");
 						return;
 
         }
 		  if ( CheckPassword(password) === false) {
-            alert("Password  must be 8 -16 and have Lower case , upperCase");
+            ShowsweetAlert("Password  must be 8 -16 and have Lower case , upperCase");
 			return;
         }
       // Sign in with email and pass.
@@ -116,9 +116,9 @@ var password=document.getElementById("passwordsignup").value;
         var errorMessage = error.message;
         // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
+          ShowsweetAlert('The password is too weak.');
         } else {
-          alert(errorMessage);
+          ShowsweetAlert(errorMessage);
         }
         console.log(error);
         // [END_EXCLUDE]
@@ -216,6 +216,14 @@ var password=document.getElementById("passwordsignup").value;
 	function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+}
+
+function ShowsweetAlert(err) {
+    Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: err
+    });
 }
 
  
