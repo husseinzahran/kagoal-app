@@ -4,3 +4,6 @@ deploy:
   token:
     secure: "1/Q5lKK4AhIZxvAx0BUmCjtYw5NR7cSlI3kBCNA9wpGrE" 
   project: "kagoal"
+  branches:
+    only:
+      - release
