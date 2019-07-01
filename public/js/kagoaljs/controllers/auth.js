@@ -6,13 +6,29 @@
       } else {
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
-        if (email.length < 4) {
-          alert('Please enter an email address.');
+      
+		
+		if (email.length === 0) {
+			   alert('Please enter an email address.');
+          return;
+
+        }
+
+         if (validateEmail(email) === false) {
+   alert('Please enter correct  email address.');
           return;
         }
-        if (password.length < 4) {
-          alert('Please enter a password.');
+        
+         if (password.length === 0) {
+						   alert('Please enter an Password.');
           return;
+
+        }
+		  if ( CheckPassword(password) === false) 
+		  {
+			  				   alert('Password  musts be 8 -16 and have Lower case , upperCase and characters');
+          return;
+
         }
         // Sign in with email and pass.
         // [START authwithemail]
@@ -45,16 +61,47 @@
      * Handles the sign up button press.
      */
     function handleSignUp() {
-      var email = document.getElementById('emailsignup').value;
-      var password = document.getElementById('passwordsignup').value;
-      if (email.length < 4) {
-        alert('Please enter an email address.');
-        return;
+var FName=document.getElementById("FName").value;
+var LName=document.getElementById("LName").value;
+var email=document.getElementById("emailsignup").value;
+var password=document.getElementById("passwordsignup").value;
+
+  
+	   if (FName.length === 0) {
+            alert(" Please enter an First Name ");
+						return;
+
       }
-      if (password.length < 4) {
-        alert('Please enter a password.');
-        return;
-      }
+     
+   if (LName.length === 0) {
+            alert("Please enter an Last Name ");
+						return;
+
+
+        }
+         if (email.length === 0) {
+            alert("Please enter an email address.");
+						return;
+
+
+        }
+
+         if (validateEmail(email) === false) {
+            alert("Email not correct ");
+						return;
+
+
+        }
+        
+         if (password.length === 0) {
+            alert("Please enter a password.");
+						return;
+
+        }
+		  if ( CheckPassword(password) === false) {
+            alert("Password  must be 8 -16 and have Lower case , upperCase");
+			return;
+        }
       // Sign in with email and pass.
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
@@ -164,3 +211,24 @@
     window.onload = function() {
       initApp();
     };
+	
+	
+	function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+ 
+
+function CheckPassword(inputtxt) 
+{ 
+var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,16}$/;
+if(inputtxt.match(decimal)) 
+{ 
+return true;
+}
+else
+{ 
+return false;
+}
+}
