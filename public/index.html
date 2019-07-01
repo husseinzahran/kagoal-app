@@ -142,13 +142,13 @@
 								<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
 									<div class="form-group label-floating">
 										<label class="control-label">First Name</label>
-										<input class="form-control" placeholder="" type="text">
+										<input class="form-control" id="FName" placeholder="" type="text">
 									</div>
 								</div>
 								<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
 									<div class="form-group label-floating">
 										<label class="control-label">Last Name</label>
-										<input class="form-control" placeholder="" type="text">
+										<input id="LName" class="form-control" placeholder="" type="text">
 									</div>
 								</div>
 								<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -170,7 +170,7 @@
 										</div>
 									</div>
 			
-									<a href="#" class="btn btn-purple btn-lg full-width" id="quickstart-sign-up" name="signup">Complete Registration!</a>
+									<a onClick="handleSignUp();" class="btn btn-purple btn-lg full-width" id="quickstart-sign-up" name="signup">Complete Registration!</a>
 									
 								</div>
 							</div>
@@ -203,7 +203,7 @@
 									</div>
 			
 									
-									<a href="#" class="btn btn-lg btn-primary full-width" id="quickstart-sign-in" name="signin">Sign In</a>
+									<a onClick="toggleSignIn();" class="btn btn-lg btn-primary full-width" id="quickstart-sign-in" name="signin">Sign In</a>
 									<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
 								</div>
 							</div>
@@ -323,6 +323,94 @@
 
 <script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="js/libs/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script>
+$(document).ready(function(){
+$("#quickstart-sign-up1").click(function(e){
+e.preventDefault();
+var FName=document.getElementById("FName").value;
+var LName=document.getElementById("LName").value;
+var email=document.getElementById("emailsignup").value;
+var password=document.getElementById("passwordsignup").value;
+
+   if (FName.length === 0) {
+            ShowsweetAlert("First Name is required");
+      }
+     
+  else if (LName.length === 0) {
+            ShowsweetAlert("Last Name is required");
+
+        }
+        else if (email.length === 0) {
+            ShowsweetAlert("Email is required");
+
+        }
+
+        else if (validateEmail(email) === false) {
+            ShowsweetAlert("Email not correct ");
+
+        }
+        
+        else if (password.length === 0) {
+            ShowsweetAlert("Password  is required");
+        }
+		 else if ( CheckPassword(password) === false) {
+            ShowsweetAlert("Password  must be 8 -16 and have Lower case , upperCase");
+        }
+});
+
+$("#quickstart-sign-in1").click(function(e){
+e.preventDefault();
+
+var email=document.getElementById("email").value;
+var password=document.getElementById("password").value;
+
+  
+         if (email.length === 0) {
+            ShowsweetAlert("Email is required");
+
+        }
+
+        else if (validateEmail(email) === false) {
+            ShowsweetAlert("Email not correct ");
+
+        }
+        
+        else if (password.length === 0) {
+            ShowsweetAlert("Password  is required");
+        }
+		 else if ( CheckPassword(password) === false) {
+            ShowsweetAlert("Password  must be 8 -16 and have Lower case , upperCase");
+        }
+});
+
+function ShowsweetAlert(err) {
+    Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: err
+    });
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function CheckPassword(inputtxt) 
+{ 
+var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,16}$/;
+if(inputtxt.match(decimal)) 
+{ 
+return true;
+}
+else
+{ 
+return false;
+}
+} 
+});
+</script>
 
 </body>
 </html>
