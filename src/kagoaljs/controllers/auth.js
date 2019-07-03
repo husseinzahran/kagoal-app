@@ -247,14 +247,15 @@ function initApp() {
  // document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
 }
 window.onload = function() {
+    require('dotenv').config()
    var firebaseConfig = {
-    apiKey: process.env.FIREBASE_apiKey,
-    authDomain: process.env.FIREBASE_authDomain,
-    databaseURL: process.env.FIREBASE_databaseURL,
-    projectId: process.env.FIREBASE_projectId,
-    storageBucket: process.env.FIREBASE_storageBucket,
-    messagingSenderId: process.env.FIREBASE_messagingSenderId,
-    appId: process.env.FIREBASE_appId
+    apiKey: process.env.REACT_APP_FIREBASE_apiKey,
+    authDomain: process.env.REACT_APP_FIREBASE_authDomain,
+    databaseURL: process.env.REACT_APP_FIREBASE_databaseURL,
+    projectId: process.env.REACT_APP_FIREBASE_projectId,
+    storageBucket: process.env.REACT_APP_FIREBASE_storageBucket,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_messagingSenderId,
+    appId: process.env.REACT_APP_FIREBASE_appId
   };
 
   if (!firebase.apps.length) {
