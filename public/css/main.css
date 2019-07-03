@@ -3035,7 +3035,8 @@ button:hover {
   opacity: 1; }
 
 .btn-purple {
-  background-color: #7c5ac2; }
+  background-color: #7c5ac2; 
+  color: #ffffff;}
 
 .btn-blue {
   background-color: #38a9ff; }

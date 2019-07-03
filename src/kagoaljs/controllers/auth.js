@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+import swal from 'sweetalert'
 class User{
   constructor(firstName, lastName, userId) {
     this.firstName = firstName;
@@ -8,19 +10,9 @@ class User{
 
   
 function addUserRecord(user){
-   var firebaseConfig = {
-    apiKey: "AIzaSyD0S_m3FZYUG6bKCcP0yJdPQzYA-Czo_6U",
-    authDomain: "kagoal.firebaseapp.com",
-    databaseURL: "https://kagoal.firebaseio.com",
-    projectId: "kagoal",
-    storageBucket: "kagoal.appspot.com",
-    messagingSenderId: "1078510183216",
-    appId: "1:1078510183216:web:19c62f2690ef2ee2"
-  };
+  
  
-  if (!firebase.apps.length) {
-    firebase.initializeApp({});
-  }
+  
 
   // Get a reference to the database service
   var db = firebase.firestore();
@@ -255,6 +247,19 @@ function initApp() {
  // document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
 }
 window.onload = function() {
+   var firebaseConfig = {
+    apiKey: process.env.FIREBASE_apiKey,
+    authDomain: process.env.FIREBASE_authDomain,
+    databaseURL: process.env.FIREBASE_databaseURL,
+    projectId: process.env.FIREBASE_projectId,
+    storageBucket: process.env.FIREBASE_storageBucket,
+    messagingSenderId: process.env.FIREBASE_messagingSenderId,
+    appId: process.env.FIREBASE_appId
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
   initApp();
 };
 	

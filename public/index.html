@@ -29,22 +29,13 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
 
-	  <!-- Import and configure the Firebase SDK -->
-	  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-	  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-	  <script src="/__/firebase/6.2.0/firebase-app.js"></script>
-	  <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
-	  <script src="/__/firebase/init.js"></script>
-	  <script src="js/kagoaljs/controllers/auth.js"></script>
-	  
-
 	</head>
 
 	<body class="landing-page">
 
 
 	<!-- Preloader -->
-
+	
 	<div id="hellopreloader">
 		<div class="preloader">
 			<svg width="45" height="45" stroke="#fff">
@@ -113,106 +104,18 @@
 					<a href="#" class="btn btn-md btn-border c-white">Register Now!</a>
 				</div>
 			</div>
-
+			
 			<div class="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
 				
 				<!-- Login-Registration Form  -->
-				
-				<div class="registration-login-form">
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-								<svg class="olymp-login-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-login-icon"></use></svg>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-								<svg class="olymp-register-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-register-icon"></use></svg>
-							</a>
-						</li>
-					</ul>
-				
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div class="tab-pane active" id="home" role="tabpanel" data-mh="log-tab">
-							<div class="title h6">Register to Kagoal</div>
-							<form class="content">
-								<div class="row">
-									<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group label-floating">
-											<label class="control-label">First Name</label>
-											<input class="form-control" id="FName" placeholder="" type="text">
-										</div>
-									</div>
-									<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group label-floating">
-											<label class="control-label">Last Name</label>
-											<input id="LName" class="form-control" placeholder="" type="text">
-										</div>
-									</div>
-									<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-										<div class="form-group label-floating">
-											<label class="control-label">Your Email</label>
-											<input class="form-control" placeholder="" type="email" id="emailsignup" name="emailsignup">
-										</div>
-										<div class="form-group label-floating">
-											<label class="control-label">Your Password</label>
-											<input class="form-control" placeholder="" type="password" id="passwordsignup" name="passwordsignup">
-										</div>
-				
-										<div class="remember">
-											<div class="checkbox">
-												<label>
-													<input name="optionsCheckboxes" type="checkbox">
-													I accept the <a href="#">Terms and Conditions</a> of the website
-												</label>
-											</div>
-										</div>
-				
-										<a onClick="handleSignUp();" class="btn btn-purple btn-lg full-width" id="quickstart-sign-up" name="signup">Complete Registration!</a>
-										
-									</div>
-								</div>
-							</form>
-						</div>
-				
-						<div class="tab-pane" id="profile" role="tabpanel" data-mh="log-tab">
-							<div class="title h6">Login to your Account</div>
-							<form class="content">
-								<div class="row">
-									<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-										<div class="form-group label-floating">
-											<label class="control-label" >Your Email</label>
-											<input class="form-control" placeholder="" type="email" id="email" name="email">
-										</div>
-										<div class="form-group label-floating">
-											<label class="control-label">Your Password</label>
-											<input class="form-control" placeholder="" type="password" id="password" name="password">
-										</div>
-				
-										<div class="remember">
-				
-											<div class="checkbox">
-												<label>
-													<input name="optionsCheckboxes" type="checkbox">
-													Remember Me
-												</label>
-											</div>
-											<a href="#" class="forgot" data-toggle="modal" data-target="#restore-password">Forgot my Password</a>
-										</div>
-				
-										
-										<a onClick="toggleSignIn();" class="btn btn-lg btn-primary full-width" id="quickstart-sign-in" name="signin">Sign In</a>
-										<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+				<div id="login">
+					
+					
 				</div>
 				
-				<!-- ... end Login-Registration Form  -->		</div>
+				
+				<!-- ... end Login-Registration Form  -->		
+			</div>
 		</div>
 	</div>
 
@@ -236,18 +139,10 @@
 						</p>
 						<div class="form-group label-floating">
 							<label class="control-label">Your Email</label>
-							<input class="form-control" placeholder="" type="email" value="james-spiegel@yourmail.com">
+							<input class="form-control" placeholder="" type="email" id="emailreset" name="emailreset" >
 						</div>
-						<button class="btn btn-purple btn-lg full-width">Send me the Code</button>
-						<div class="form-group label-floating">
-							<label class="control-label">Enter the Code</label>
-							<input class="form-control" placeholder="" type="text" value="">
-						</div>
-						<div class="form-group label-floating">
-							<label class="control-label">Your New Password</label>
-							<input class="form-control" placeholder="" type="password" value="olympus">
-						</div>
-						<button class="btn btn-primary btn-lg full-width">Change your Password!</button>
+						<button class="btn btn-purple btn-lg full-width" onclick="sendPasswordReset();return false;">Send me the Link</button>
+						
 					</form>
 
 				</div>
@@ -323,7 +218,8 @@
 
 	<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
 	<script src="js/libs/jquery.validate.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 	</body>
 </html>
