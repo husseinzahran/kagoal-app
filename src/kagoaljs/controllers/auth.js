@@ -34,7 +34,8 @@ function addUserRecord(user){
 
 }
 
-function toggleSignIn() {
+function toggleSignIn(e) {
+  e.stopPropagation();
   if (firebase.auth().currentUser) {
     // [START signout]
     firebase.auth().signOut();
@@ -92,7 +93,8 @@ function toggleSignIn() {
     /**
      * Handles the sign up button press.
      */
-function handleSignUp() {
+function handleSignUp(e) {
+  e.stopPropagation();
   var FName=document.getElementById("FName").value;
   var LName=document.getElementById("LName").value;
   var email=document.getElementById("emailsignup").value;
@@ -137,11 +139,7 @@ function handleSignUp() {
     console.log(uid);
 
     var userObj = new User(FName, LName, uid);
-
-
     addUserRecord(userObj);
-
-    
   })
 
   .catch(function(error) {
