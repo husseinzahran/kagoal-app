@@ -1,4 +1,7 @@
 language: generic # no-frills build
+script:
+  - npm install
+    - npm run build
 deploy:
   provider: firebase
   token:
