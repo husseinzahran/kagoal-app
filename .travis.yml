@@ -10,7 +10,7 @@ script:
 deploy:
   provider: firebase
   token:
-    secure: "1/GnDoXdJKXzOaRkTKuRA3XoNXysVJjoPSMigj69aa4gc" 
+    secure: "1/Q5lKK4AhIZxvAx0BUmCjtYw5NR7cSlI3kBCNA9wpGrE" 
   project: "kagoal"
   on:
     branch: release
