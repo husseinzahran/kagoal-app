@@ -1,7 +1,9 @@
-language: generic # no-frills build
-script:
-  - npm install
-    - npm run build
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: firebase
   token:
