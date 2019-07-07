@@ -1,19 +1,16 @@
 language: node_js
 node_js:
-- stable
+  - "stable"
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-- npm install
-- npm run-script build
+  - npm install
+  - npm run-script build
 deploy:
   provider: firebase
   token:
-    secure: SlotM4Qv4HERc7M9rttF/nJJ8B+ScbdoMWPa0wroE/SUxz/h+YFwIhldSS+k3XQM7oj+Uz4g/WafHqsLvEo+4CTiq3BW1PUDSM4AhLSQdiiU2iYuUX85oJjqjC8LVT6RoyE3LlmR3X9/EpOdmWLr01Dmz6cr24efmLsdFz86JfIwBjsPZSBnC+kXj8UEnPvl5K9yEOLbcOcYum3d8LXh4aQTDmd30n3eqvscFVR+mmZeYvHFRhNdJGo9lBGmwId2ovu58FEmXFP3PAT1J0/2PfUJMyUrPjgJXc7Cgxi8tGG5pBOMEWooUrDTapuY8JhH+taUztow9pfljO9Egd/S4welWT1NkLCD1RNFFp/ghQuYdWz/3w56lA0r+9NR3oagPzeqMhMVbo17aWYQAMPe+IAMjYiA6PgQkBRgimxlQm6AKe4Eshb4G6fIXoo7/0CtlfixyrDLpXs00acjM4xihZqw+oMRq6bwZTFsWSV5g0EjfQD7ugt7/D9UXQrKlpb6TW0X0SDZXO0PHqYGj6HuDx5P1VdfGv/vTxuc/1CX+FaRCpgaeolhM5h9Ky60o3PuyfXR/lLaE0tu5ikU20fhCN0ZP8DpMc9mNhNHUXvXjzNP32b+i373D2kZ1Qmyzc8cLBk2vP9bYf+qmFIFMZLlY4vqBFODf0XmbUR9FT96IU0=
-  project: kagoal
+    secure: "1/GnDoXdJKXzOaRkTKuRA3XoNXysVJjoPSMigj69aa4gc" 
+  project: "kagoal"
   on:
     branch: release
-env:
-  global:
-    secure: SlotM4Qv4HERc7M9rttF/nJJ8B+ScbdoMWPa0wroE/SUxz/h+YFwIhldSS+k3XQM7oj+Uz4g/WafHqsLvEo+4CTiq3BW1PUDSM4AhLSQdiiU2iYuUX85oJjqjC8LVT6RoyE3LlmR3X9/EpOdmWLr01Dmz6cr24efmLsdFz86JfIwBjsPZSBnC+kXj8UEnPvl5K9yEOLbcOcYum3d8LXh4aQTDmd30n3eqvscFVR+mmZeYvHFRhNdJGo9lBGmwId2ovu58FEmXFP3PAT1J0/2PfUJMyUrPjgJXc7Cgxi8tGG5pBOMEWooUrDTapuY8JhH+taUztow9pfljO9Egd/S4welWT1NkLCD1RNFFp/ghQuYdWz/3w56lA0r+9NR3oagPzeqMhMVbo17aWYQAMPe+IAMjYiA6PgQkBRgimxlQm6AKe4Eshb4G6fIXoo7/0CtlfixyrDLpXs00acjM4xihZqw+oMRq6bwZTFsWSV5g0EjfQD7ugt7/D9UXQrKlpb6TW0X0SDZXO0PHqYGj6HuDx5P1VdfGv/vTxuc/1CX+FaRCpgaeolhM5h9Ky60o3PuyfXR/lLaE0tu5ikU20fhCN0ZP8DpMc9mNhNHUXvXjzNP32b+i373D2kZ1Qmyzc8cLBk2vP9bYf+qmFIFMZLlY4vqBFODf0XmbUR9FT96IU0=
