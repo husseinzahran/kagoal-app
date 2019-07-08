@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GoalItem() {
+function GoalItem(props) {
   var useThreeDot = '<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>'
   var useHappyFace = '<use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use>'
   var useSettingsIcon = '<use xlink:href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use>'
@@ -32,8 +32,8 @@ function GoalItem() {
 									<img src="img/logo.png" alt="Olympus" />
 								</div>
 								<div className="author-content">
-									<a href="#" className="h5 author-name">My Family</a>
-									<div className="country">6 Friends in the Group</div>
+									<a href="#" className="h5 author-name">{props.goalTitle}</a>
+									<div className="country">6 Milestones</div>
 								</div>
 							</div>
 					
@@ -43,31 +43,7 @@ function GoalItem() {
 										<img src="img/friend-harmonic5.jpg" alt="friend" />
 									</a>
 								</li>
-								<li>
-									<a href="#">
-										<img src="img/friend-harmonic10.jpg" alt="friend" />
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="img/friend-harmonic7.jpg" alt="friend" />
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="img/friend-harmonic8.jpg" alt="friend" />
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="img/friend-harmonic2.jpg" alt="friend" />
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="img/avatar30-sm.jpg" alt="author" />
-									</a>
-								</li>
+								
 							</ul>
 					
 					

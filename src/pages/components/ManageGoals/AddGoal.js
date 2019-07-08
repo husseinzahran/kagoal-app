@@ -19,8 +19,8 @@ function AddGoal() {
 						</a>
 				
 						<div className="author-content">
-							<a href="#" className="h5 author-name">My Family</a>
-							<div className="country">6 Friends in the Group</div>
+							<a href="#" className="h5 author-name">Add Goal</a>
+							<div className="country">Keep a Goal</div>
 						</div>
 				
 					</div>
